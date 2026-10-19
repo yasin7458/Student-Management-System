@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "name": "Admin"
+    },
+    {
+      "id": "2",
+      "email": "dhruv@gmail.com",
+      "password": "dhruv123",
+      "name": "Yasin"
+    }
+  ],
+  "students": [
+    {
+      "id": "1",
+      "name": "Aarav Patel",
+      "image": "/src/assets/aarav.jpg",
+      "subject": "English Literature",
+      "marks": 70,
+      "examType": "Online Exam",
+      "grade": "Grade 3"
+    },
+    {
+      "id": "2",
+      "name": "Diya Shah",
+      "image": "/src/assets/diya.jpg",
+      "subject": "Mathematics",
+      "marks": 85,
+      "examType": "Class Exam",
+      "grade": "Grade 4"
+    },
+    {
+      "id": "3",
+      "name": "Krish Mehta",
+      "image": "/src/assets/krish.jpg",
+      "subject": "Science",
+      "marks": 62,
+      "examType": "Missed Exam",
+      "grade": "Grade 3"
+    },
+    {
+      "id": "4",
+      "name": "Anaya Joshi",
+      "image": "/src/assets/anaya.jpg",
+      "subject": "Computer Science",
+      "marks": 91,
+      "examType": "Online Exam",
+      "grade": "Grade 5"
+    },
+    {
+      "id": "5",
+      "name": "Dev Sharma",
+      "image": "/src/assets/dev.jpg",
+      "subject": "Gujarati",
+      "marks": 76,
+      "examType": "Class Exam",
+      "grade": "Grade 4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
