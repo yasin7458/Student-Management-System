@@ -42,7 +42,7 @@ root, using the filenames below.
 
 ### Sorting Student
 
-![Edit Student](./src/assets/screen-shots/sorting.png)
+![Edit Student](./src/assets/screen-shots/soring.png)
 
 
 To add screenshots: 1. Run the application and open each page. 2. Take
