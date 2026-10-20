@@ -13,6 +13,27 @@
       "name": "Dhruv Joshi",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqfy500ZiiulX1lRn0-q2LbiXgtM9aQF6WLFCxhsYDQ&s=10",
       "password": "dhruv123"
+    },
+    {
+      "id": "3",
+      "email": "mishti@gmail.com",
+      "password": "mishu123",
+      "name": "Mishti Ravat",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDgZv2c0J2Ad4rOk9eK9hE8xU51ng4teO4iM0ca5Su7w&s=10"
+    },
+    {
+      "id": "4",
+      "email": "dhruviba@gmail.com",
+      "name": "Dhruviba Jadeja",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDFZXa0yu_Jthav7p96WMwT646amIMO72UoUlnkCFAFQ&s=10",
+      "password": "dhruviba123"
+    },
+    {
+      "id": "5",
+      "email": "mahipat@gmail.com",
+      "password": "mahipat123",
+      "name": "Mahipat Patel",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYar03Cx8hCMLKZAKZV3nF8ryhcaT8t-_a4S2zDFRXsg&s=10"
     }
   ],
   "students": [
