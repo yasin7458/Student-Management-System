@@ -25,6 +25,7 @@ function Dashboard() {
     const dispatch = useDispatch();
 
     const students = useSelector((state) => state.students);
+    const user = useSelector((state) => state.auth.user);
 
     const [search, setSearch] = useState("");
     const [examFilter, setExamFilter] = useState("All");
@@ -80,8 +81,7 @@ function Dashboard() {
     return (
         <div className="dashboard-page">
             <div className="container">
-                <StudentDetails students={students} />
-                
+                <StudentDetails students={students} user={user} />
 
                 <div className="student-management-layout">
                     <StudentForm

@@ -4,10 +4,8 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../redux/action/authActions";
-import image from "../../assets/dhruv.jpg";
 
-
-function StudentDetails({ students }) {
+function StudentDetails({ students, user }) {
     let totalStudents = students.length;
     let totalSubjects = [];
 
@@ -30,16 +28,18 @@ function StudentDetails({ students }) {
         navigate("/login");
     }
 
-
     return (
         <div className="student-header">
             <div className="student-profile">
                 <div className="teacher-avatar">
-                    <img src={image} alt="Yash"/>
+                    <img
+                        src={user.image}
+                        alt={user.name}
+                    />
                 </div>
 
                 <div className="teacher-info">
-                    <h3>Dhruv Josi</h3>
+                    <h3>{user.name}</h3>
                     <p>Student Management System</p>
                 </div>
             </div>
@@ -51,16 +51,12 @@ function StudentDetails({ students }) {
                 </div>
 
                 <div className="student-stat">
-                    <h4>
-                        {totalSubjects.length}
-                    </h4>
+                    <h4>{totalSubjects.length}</h4>
                     <p>Subjects</p>
                 </div>
 
                 <div className="student-stat">
-                    <h4>
-                        {totalExams}
-                    </h4>
+                    <h4>{totalExams}</h4>
                     <p>Exams</p>
                 </div>
 

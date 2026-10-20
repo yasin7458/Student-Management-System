@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
-import { FaPlus } from "react-icons/fa";
 
-import studentImage from "../../assets/yash.jpg";
+import { useState, useEffect } from "react";
+import { FaPlus, FaUser } from "react-icons/fa";
 
 function StudentForm({ onAddStudent, editStudent, onUpdateStudent, onCancel }) {
     const [name, setName] = useState("");
@@ -9,7 +8,9 @@ function StudentForm({ onAddStudent, editStudent, onUpdateStudent, onCancel }) {
     const [marks, setMarks] = useState("");
     const [examType, setExamType] = useState("Online Exam");
     const [grade, setGrade] = useState("Grade 3");
-    const [image, setImage] = useState(studentImage);
+    const [image, setImage] = useState("");
+    const [showImageInput, setShowImageInput] = useState(false);
+    const [imageUrl, setImageUrl] = useState("");
 
     useEffect(() => {
         if (editStudent) {
@@ -18,9 +19,19 @@ function StudentForm({ onAddStudent, editStudent, onUpdateStudent, onCancel }) {
             setMarks(editStudent.marks);
             setExamType(editStudent.examType);
             setGrade(editStudent.grade);
-            setImage(editStudent.image || studentImage);
+            setImage(editStudent.image || "");
+            setImageUrl(editStudent.image || "");
+            setShowImageInput(false);
         }
     }, [editStudent]);
+
+    function handleImageAdd() {
+        if (imageUrl.trim() !== "") {
+            setImage(imageUrl.trim());
+        }
+
+        setShowImageInput(false);
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -46,7 +57,9 @@ function StudentForm({ onAddStudent, editStudent, onUpdateStudent, onCancel }) {
         setMarks("");
         setExamType("Online Exam");
         setGrade("Grade 3");
-        setImage(studentImage);
+        setImage("");
+        setImageUrl("");
+        setShowImageInput(false);
     }
 
     function handleCancel() {
@@ -55,15 +68,54 @@ function StudentForm({ onAddStudent, editStudent, onUpdateStudent, onCancel }) {
         setMarks("");
         setExamType("Online Exam");
         setGrade("Grade 3");
-        setImage(studentImage);
+        setImage("");
+        setImageUrl("");
+        setShowImageInput(false);
+
         onCancel();
+    }
+
+    function handleImageButton() {
+        setImageUrl(image);
+        setShowImageInput(true);
     }
 
     return (
         <div className="student-form-section">
             <div className="student-form-avatar">
-                <img src={image} alt="Student" />
+                {image ? (
+                    <img src={image} alt="Student" />
+                ) : (
+                    <FaUser className="default-student-icon" />
+                )}
+
+                <button
+                    type="button"
+                    className="student-image-plus"
+                    onClick={handleImageButton}
+                >
+                    <FaPlus />
+                </button>
             </div>
+
+            {showImageInput && (
+                <div className="student-form-field">
+                    <input
+                        type="url"
+                        placeholder="Paste image URL here"
+                        value={imageUrl}
+                        onChange={(e) => setImageUrl(e.target.value)}
+                    />
+
+                    <button
+                        type="button"
+                        className="student-add-button"
+                        onClick={handleImageAdd}
+                    >
+                        Add Image
+                    </button>
+                </div>
+            )}
 
             <form className="student-form" onSubmit={handleSubmit}>
                 <div className="student-form-field">
